@@ -35,3 +35,4 @@ _Steps_
 - Navigate to the project folder
 - Run the following command - `mvn clean verify`
 - Reports can be found in `target/cucumber-html-reports/advanced-html/cucumber-html-reports`
+- All relevent dependencies in pom.xml
