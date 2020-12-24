@@ -20,6 +20,8 @@ public class UserFlows {
     public List<Users> getAllUsers() {
         apiActions = new ApiActions(ApiEndpoints.GetUserAPI, HttpMethod.GET);
         Response response = apiActions.executeAPI().andReturn();
+        response.then().assertThat().statusCode(200);
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("schema/usersResponseSchema.json"));
         List<Users> userList = Arrays.asList(response.as(Users[].class));
         return userList;
     }
@@ -27,6 +29,7 @@ public class UserFlows {
     public List<Users> getLocationWiseUsers(String location) {
         apiActions = new ApiActions(ApiEndpoints.GetUserAPI, HttpMethod.GET);
         Response response = apiActions.executeAPI().andReturn();
+        response.then().assertThat().statusCode(200);
         response.then().assertThat().body(matchesJsonSchemaInClasspath("schema/usersResponseSchema.json"));
         List<Users> userList = Arrays.asList(response.as(Users[].class));
         List<Users> validUserList = new ArrayList<>();

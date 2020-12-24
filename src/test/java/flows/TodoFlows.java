@@ -17,6 +17,8 @@ public class TodoFlows {
     public List<Todo> getAllTodos() {
         apiActions = new ApiActions(ApiEndpoints.GetTodosAPI, HttpMethod.GET);
         Response response = apiActions.executeAPI().andReturn();
+        response.then().assertThat().statusCode(200);
+        response.then().assertThat().body(matchesJsonSchemaInClasspath("schema/todoResponseSchema.json"));
         List<Todo> todoList = Arrays.asList(response.as(Todo[].class));
         return todoList;
     }
@@ -26,6 +28,7 @@ public class TodoFlows {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("userId",userId);
         Response response = apiActions.executeWithQueryParams(queryParams).andReturn();
+        response.then().assertThat().statusCode(200);
         response.then().assertThat().body(matchesJsonSchemaInClasspath("schema/todoResponseSchema.json"));
         List<Todo> todoList = Arrays.asList(response.as(Todo[].class));
         return todoList;
@@ -36,6 +39,7 @@ public class TodoFlows {
         Map<String, String> queryParams = new HashMap<>();
         queryParams.put("userId",userId);
         Response response = apiActions.executeWithQueryParams(queryParams).andReturn();
+        response.then().assertThat().statusCode(200);
         response.then().assertThat().body(matchesJsonSchemaInClasspath("schema/todoResponseSchema.json"));
         List<Todo> todoList = Arrays.asList(response.as(Todo[].class));
         List<Todo> taskStatusTodoList = new ArrayList<>();

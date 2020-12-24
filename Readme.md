@@ -19,7 +19,9 @@ Highlights of Project
 - Action based approach for modularity and code re-usability
 - Usage of enums to have less string comparisons and segregation of constants
 - Modular Util package to have 3rd party library interactions and common utilities
+- Http Status assertions
 - Schema validation for the response
+- Scenario assertions using assertJ
 - Cucumber as Test runner to have reusable steps with parameterization and user-friendly way of writing tests
 - Advanced Cucumber reporting in `target/cucumber-html-reports/advanced-html/cucumber-html-reports`
 
