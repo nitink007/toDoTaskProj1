@@ -1,5 +1,7 @@
+@TodoTask
 Feature: Todo task
 
+  @TodoTaskCheck1
   Scenario: Verify that all the users of City Grofers complete more than half of their to-do tasks
     Given User belongs to the city "GROFERS"
     And User has the Todo tasks

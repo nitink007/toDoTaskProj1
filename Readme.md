@@ -35,6 +35,6 @@ _Prerequisites_
 _Steps_
 - Open Terminal
 - Navigate to the project folder
-- Run the following command - `mvn clean verify`
+- Run the following command - `clean verify -Dcucumber.filter.tags=@TodoTaskCheck1`
 - Reports can be found in `target/cucumber-html-reports/advanced-html/cucumber-html-reports`
 - All relevent dependencies in pom.xml
