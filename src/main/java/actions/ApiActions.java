@@ -8,6 +8,7 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseOptions;
 import io.restassured.specification.RequestSpecification;
+import utils.PropertiesUtil;
 
 import java.util.Map;
 

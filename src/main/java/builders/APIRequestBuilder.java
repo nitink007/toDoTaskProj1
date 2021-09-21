@@ -15,7 +15,9 @@ public class APIRequestBuilder {
     public APIRequestBuilder() {
         builder = new RequestSpecBuilder();
         builder.setBaseUri(PropertiesUtil.getAppPropValues("baseUri"));
+        builder.setBasePath(PropertiesUtil.getAppPropValues("basePath"));
         builder.setContentType(ContentType.JSON);
+        builder.setAccept(ContentType.JSON);
     }
 
     public void resetRequestSpecBuilder() {
